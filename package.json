@@ -1,0 +1,12 @@
+{
+  "name": "js-resources",
+  "version": "1.0.0",
+  "description": "get list of viedeos as resoursec for a project",
+  "main": "index.js",
+  "repository": "https://github.com/alaminyusuf/js-resources.git",
+  "author": "Al-amin Yusuf",
+  "license": "MIT",
+  "dependencies": {
+    "scrape-youtube": "^2.1.3"
+  }
+}
