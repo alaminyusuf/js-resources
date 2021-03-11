@@ -2,11 +2,13 @@ const youtube = require('scrape-youtube').default
 
 async function scrape() {
     await youtube.search('javascript').then(results => {
-        // Unless you specify a type, it will only return 'video' results
-        console.log(results.videos);
+        const over100 = results.videos.filter(video => video.views >= 100000)
+        console.log(over100)
+
     }).catch(e => {
         console.log(e)
     });
+
 }
 
 scrape()
