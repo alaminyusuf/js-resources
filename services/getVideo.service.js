@@ -1,7 +1,6 @@
-
 class GetVideoService {
     constructor(Youtube) {
-        this.YoutubeInst = Youtube
+        this.YoutubeInst = Youtube;
     }
     async scrape(query) {
         try {
@@ -17,7 +16,7 @@ class GetVideoService {
             });
             return structuredData;
         } catch (error) {
-            throw new Error('Can not fetch youtube videos at this moment please try again later')
+            throw new Error('Can not fetch youtube videos at this moment please try again later');
         }
     }
     filter(array = [], condition = 1000) {
@@ -25,4 +24,4 @@ class GetVideoService {
     }
 }
 
-module.exports = GetVideoService
+module.exports = GetVideoService;

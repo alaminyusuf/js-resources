@@ -1,10 +1,8 @@
-const GetVideoService = require('../services/getVideo.service')
-
+const GetVideoService = require('../services/getVideo.service');
 class GetVideoControll {
     constructor() {
-        this.service = new GetVideoService()
+        this.service = new GetVideoService();
     }
-
 
     async getVideoHandler(_, res) {
         let serverResponse = {
@@ -21,9 +19,9 @@ class GetVideoControll {
             serverResponse.data = 'Something went wrong';
         } finally {
             res.json(serverResponse);
-            return
-        }
-    }
-}
+            return;
+        };
+    };
+};
 
 module.exports = GetVideoControll;
