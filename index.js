@@ -1,14 +1,12 @@
 const express = require('express')
-const Scrape = require('./scrape')
 const app = express()
-
+const getVideoRoute = require('./router');
 const controller = new Scrape()
 
 
-app.get('/', (req, res) => res.json({ resources: "Resources" }))
-app.get('/resources', (req, res) => {
-    console.log('making request to youtube')
-    controller.scrape(req, res)
-})
+
+
+app.get('/', (_, res) => res.json({ resources: "Resources" }))
+app.use('/', getVideoRoute);
 
 app.listen(3000, () => console.log('app running...'))
