@@ -1,14 +1,14 @@
-const youtube = require('scrape-youtube').default
+const express = require('express')
+const Scrape = require('./scrape')
+const app = express()
 
-async function scrape() {
-    await youtube.search('javascript').then(results => {
-        const over100 = results.videos.filter(video => video.views >= 100000)
-        console.log(over100)
+const controller = new Scrape()
 
-    }).catch(e => {
-        console.log(e)
-    });
 
-}
+app.get('/', (req, res) => res.json({ resources: "Resources" }))
+app.get('/resources', (req, res) => {
+    console.log('making request to youtube')
+    controller.scrape(req, res)
+})
 
-scrape()
+app.listen(3000, () => console.log('app running...'))
