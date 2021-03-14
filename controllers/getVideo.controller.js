@@ -12,7 +12,6 @@ class GetVideoControll {
         try {
             const data = await this.service.scrape('javascript');
             serverResponse.data = data;
-
         } catch (error) {
             serverResponse.status = 500;
             serverResponse.error = true;
